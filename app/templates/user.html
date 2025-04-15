@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LearnHelper</title>
+  <link rel="stylesheet" href="/static/css/user.css" />
+  <link rel="icon" href="/images/icon.ico" type="image/x-icon" />
+</head>
+<body>
+<header>
+  <div class="left-header">
+    <h2><a href="#" class="logo-link" onclick="logoutConfirm()">LearnHelper</a></h2>
+    <div class="status" id="status">初始化中...</div>
+  </div>
+  <div style="position: relative;">
+    <button class="settings-btn" onclick="toggleSettingsMenu()">⚙️</button>
+    <div id="settingsMenu" class="settings-menu">
+      <div class="menu-row"><span class="menu-icon">🧑</span><strong id="displayUserId"></strong></div>
+      <div class="menu-row menu-item" onclick="openSettingsDialog()"><span class="menu-icon">🔐</span><span>更改 API Key</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="container" id="mainContent" style="display: none;">
+  <div class="block" id="ocrBlock">
+    <h3>📸 OCR 识别内容</h3>
+    <div id="ocrText" class="content-box">等待识别...</div>
+  </div>
+  <div class="block" id="answerBlock">
+    <h3>🤖 大模型回答</h3>
+    <div id="answerText" class="content-box">等待回答...</div>
+  </div>
+  <div class="block" id="imageBlock" style="display: none;">
+    <h3>🖼️ 截图展示</h3>
+    <img id="screenshot" src="" alt="Screenshot" />
+  </div>
+  <div class="block" id="errorBlock" style="display: none;">
+    <h3>⚠️ 处理错误异常详情</h3>
+    <div id="errorText" class="content-box" style="color: red;"></div>
+  </div>
+</div>
+
+<!-- API Key 弹窗 -->
+<div id="settingsModal">
+  <div id="settingsContent">
+    <h3 style="margin-top: 0;">更改 Qwen API Key</h3>
+    <input type="password" id="apiKeyInput" placeholder="请输入您的 Qwen API Key" />
+    <div class="modal-btns">
+      <button onclick="hideSettingsDialog()" class="cancel-btn">取消</button>
+      <button onclick="submitSettings()" class="confirm-btn">确认</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const userId = "{{ user_id }}";
+</script>
+<script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+<script src="/static/js/user.js"></script>
+</body>
+</html>

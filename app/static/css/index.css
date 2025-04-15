@@ -1,0 +1,240 @@
+body {
+  font-family: "Microsoft YaHei", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 40px); /* 留出 footer 的高度 */
+}
+
+.left, .right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.left {
+  width: 38.2%;
+  background: #f0f2f5;
+}
+
+.right {
+  width: 61.8%;
+  background: #ffffff;
+  box-shadow: -2px 0 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.left-content, .right-content {
+  width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.left h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #3949ab;
+}
+
+.left p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.inline-download {
+  display: inline-block;
+  font-size: 12px;
+  padding: 4px 10px;
+  background: #3949ab;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.inline-download:hover {
+  background: #303f9f;
+}
+
+.right h2 {
+  font-size: 24px;
+  margin-bottom: 5px;
+  color: #3949ab;
+}
+
+.right input {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  margin: 12px auto;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* 按钮行 */
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* 通用按钮样式 */
+.button-row button {
+  max-width: 140px;
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* 注册按钮（浅灰） */
+.btn-secondary {
+  background: #ccc;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #b3b3b3;
+}
+
+/* 登录按钮（主色） */
+.btn-primary {
+  background: #3949ab;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #303f9f;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .left, .right {
+    flex: none;
+    width: 100%;
+    padding: 20px;
+    box-shadow: none;
+  }
+
+  .left {
+    order: 2;
+    background: #f8f8f8;
+  }
+
+  .right {
+    order: 1;
+    box-shadow: none;
+  }
+
+  .button-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .button-row button {
+    max-width: 100%;
+  }
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #3949ab;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+  background: #f9f9f9;
+  border-top: 1px solid #eee;
+  padding: 10px 0;
+  z-index: 999;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box {
+  background: white;
+  padding: 24px 28px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+.modal-box input {
+  width: 100%;
+  padding: 8px;
+  margin: 12px 0;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.modal-buttons button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.modal-buttons button:first-child {
+  background: #ccc;
+  color: white;
+}
+
+.modal-buttons button:last-child {
+  background: #3949ab;
+  color: white;
+}

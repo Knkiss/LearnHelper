@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LearnHelper 登录</title>
+  <link rel="stylesheet" href="/static/css/index.css" />
+  <link rel="icon" href="/static/images/icon.ico" type="image/x-icon" />
+  <script src="/static/js/sha256.min.js"></script>
+  <script src="/static/js/index.js"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- 左侧：使用指南 -->
+    <div class="left">
+      <div class="left-content">
+        <h2>使用指南 版本v0.4</h2>
+        <p>
+          1️⃣ 在当前网址右侧输入<strong>邀请码</strong>注册账号，或者自行搭建服务器 <strong>github待上传</strong><br>
+          2️⃣ <a href="#" class="inline-download" target="_blank">点我下载电脑客户端 v0.4</a>，<strong>管理员权限启动</strong>并登录账号<br>
+          　　<span style="color:#555">客户端使用说明：</span><br>
+          　　<span style="color:#555">【1】使用数字键1（左上角）和2（右下角）对当前鼠标位置进行记录</span><br>
+          　　<span style="color:#555">【2】使用数字键3、4、5截图、上传图片、并使用对应功能</span><br>
+          　　<span style="color:#555">【3】3：进行文字OCR并回答，4：只展示截图，5：进行多模态回答</span><br>
+          3️⃣ 在当前网址右侧登陆账号，设置Qwen API KEY<br>
+          　　<span style="color:#555">没有API KEY？</span>
+            <a href="https://zhuanlan.zhihu.com/p/21149094957" target="_blank">点击查看申请教程</a><br>
+          4️⃣ 移动设备登录网页端，电脑登录客户端，高效完成文字类 Exam ✏️
+        </p>
+      </div>
+    </div>
+
+    <!-- 右侧：登录/注册 -->
+    <div class="right">
+      <div class="right-content">
+        <h2>欢迎使用 LearnHelper</h2>
+        <input type="text" id="userIdInput" placeholder="请输入用户账号" />
+        <input type="password" id="passwordInput" placeholder="请输入用户密码" />
+        <div class="button-row">
+          <button class="btn-secondary" onclick="showModal()">注册账号</button>
+          <button class="btn-primary" onclick="login()">登录系统</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 激活码弹窗 -->
+  <div class="modal-overlay" id="activationModal" style="display: none;">
+    <div class="modal-box">
+      <h3>请输入邀请码</h3>
+      <input type="text" id="activationCodeInput" placeholder="请输入邀请码" />
+      <div class="modal-buttons">
+        <button onclick="hideModal()">取消</button>
+        <button onclick="submitActivation()">确认</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    本系统仅供学习辅助使用，严禁传播、倒卖或用于任何违法用途
+  </footer>
+</body>
+</html>

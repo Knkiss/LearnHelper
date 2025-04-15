@@ -1,0 +1,6 @@
+.idea/
+*.exe
+cache
+data/user
+client/tmp/
+*.zip
