@@ -1,6 +1,6 @@
 # LearnHelper
 
-**LearnHelper** 是一个基于 Flask + SocketIO 构建的客户端+服务端+后端服务，支持图像上传、OCR 识别、多模态问答、用户注册登录及实时交互。适用于学习辅助场景。
+**LearnHelper** 是一个基于 Flask + SocketIO 构建的客户端+网页端+后端服务，支持图像上传、OCR 识别、多模态问答、用户注册登录及实时交互。适用于学习辅助场景。
 
 ---
 
